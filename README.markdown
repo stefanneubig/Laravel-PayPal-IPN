@@ -26,9 +26,8 @@ For example add a route, which will act as your PayPal IPN Url.
 
 	Route::post('paypal', function()
 	{
-		Bundle::start('paypal-ipn');
-    
-    $listener = new IpnListener();
+		Bundle::start('paypal-ipn'); // Start Bundle
+    $listener = new IpnListener(); // Instanciate IpnListener 
     $listener->use_sandbox = true; // PayPal Sandbox Acccount for testing
     
     try {
